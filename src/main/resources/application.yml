@@ -1,0 +1,26 @@
+server:
+  servlet:
+    context-path: /assessment
+
+  port: 8586
+  tomcat:
+    accesslog:
+      enabled: true
+      directory: "/logs/assessment"
+      prefix: access_log
+      buffered: false
+      suffix: .log
+      file-date-format: .yyyy-MM-dd
+      pattern: "%h %l %u %t %r %s %b %D"
+
+  endpoints:
+    health:
+      enabled: true
+
+
+spring:
+  datasource:
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://${POSTGRES_DB_HOST:localhost:5432}/${POSTGRES_DB_NAME:dialog}?currentSchema=${POSTGRES_DB_SCHEMA:assessment}
+    username: ${POSTGRES_DB_USERNAME:dialog}
+    password: ${POSTGRES_DB_PASSWORD:dialog}
