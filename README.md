@@ -30,5 +30,4 @@ Add to cart sequence diagram
 
 
 # Deployment Archetecture
-
 ![Simple Deploynment Architecture For Assignment](https://user-images.githubusercontent.com/47621741/119356317-eb76ad00-bcc3-11eb-8cc2-e0ba9c3837f4.png)
