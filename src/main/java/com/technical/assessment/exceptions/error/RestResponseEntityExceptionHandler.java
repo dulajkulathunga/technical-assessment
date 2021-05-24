@@ -40,7 +40,7 @@ public class RestResponseEntityExceptionHandler extends ResponseEntityExceptionH
     @ExceptionHandler({NullPointerException.class, IllegalArgumentException.class, IllegalStateException.class})
     public ResponseEntity<Object> handleInternal(final RuntimeException exception, final WebRequest request, HttpServletRequest servletRequest) {
         logger.error("500 Status Code", exception);
-        return handleExceptionInternal(exception, responseBuilder(servletRequest.getServletPath(), "Invalid inputs are not allowed", HttpStatus.INTERNAL_SERVER_ERROR), new HttpHeaders(), HttpStatus.INTERNAL_SERVER_ERROR, request);
+        return handleExceptionInternal(exception, responseBuilder(servletRequest.getServletPath(), ExceptionConstants.INVALID_INPUT_NOT_ALLOWED.toString(), HttpStatus.INTERNAL_SERVER_ERROR), new HttpHeaders(), HttpStatus.INTERNAL_SERVER_ERROR, request);
     }
 
     private ExceptionResponseDto responseBuilder(String servletPath, String message, HttpStatus httpStatus) {
